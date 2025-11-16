@@ -1,57 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Milagros Dimasi</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Milagros Dimasi</h1>
-            <p>Bienvenidxs a mi Portfolio</p>
-        </header>
-    <nav>
-        <ul>
-            <li><a href="#">Sobre mí</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-    </div>
-    <div class="container">
-        <main>
-            <section>
-                <h2>Sobre mí</h2>
-                <div class="sobre-mi">
-                    <img src="img/yo.jpeg" alt="Foto de Milagros Dimasi en un fondo blanco, remera negra mirando a la camara" class="mifoto">
-                    <p>Texto biografico</p>
+    <header>
+        <h1>Milagros Dimasi</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h2>Portfolio</h2>
+    </section>
+
+    <section id="sobre-mi" class="sobre-mi">
+        <img src="img/yo.jpeg" alt="Foto de Mili">
+        <div class="bio">
+            <h2>Sobre mí</h2>
+            <p>
+                Aquí va tu texto biográfico, contando quién sos, qué hacés,
+                tu enfoque artístico y cómo trabajás con las identidades,
+                los colores y la experiencia sensorial.
+            </p>
+        </div>
+    </section>
+
+    <section id="proyectos" class ="trabajos">
+        <div class= "contenedor-tarjetas">
+            <div class="tarjeta">
+                <img src="proyectos/Cine-Monstruo/BOCETO-COLLAGE.png" alt="Ensayo sobre los generos cinematográficos del cuerpo de Linda Williams en relación a la figura y el concepto del monstruo reflejado en la tecnica artistica del collage" />
+            
+                <div class="contenido">
+                    <h3>Cine-Monstruo</h3>
+                    <p>Ensayo bla bla</p>
                 </div>
-            </section>
-            <section>
-                <h2>Proyectos</h2>
-                <div class="card">
-                    <a href="https://drive.google.com/file/d/1bRpjDXrUNYGy9kYDvHeHYB9f-ua_dk2V/view?usp=sharing" target="_blank">
-                    <img src="proyectos/Cine-Monstruo/BOCETO-COLLAGE.png" alt="" class="card__image">
-                    <div class="card__content">
-                        <h2 class="card__title">Cine-Monstruo</h2>
-                        <p class="card__description">Ensayo academico sobre las estructuras visuales cinematograficas en la construcción del cuerpo femenino</p> <br>
-                        <dl class="card__details">
-                        <dd>Diciembre 2022</dd>
-                        </dl>
-                    </div>
-                    </a>
+            </div>
+
+            <div class="tarjeta">
+                <img src="proyectos/Junipero/Junipero.png" alt="Video Arte que explora la idea de la muerte, la inmortalidad y la escencia humana"/>
+                <div class="info-proyecto">
+                    <h3>Junipero o el Futurista Frankenstein</h3>
+                    <p>Videoarte bla bla</p>
+                    <a title="Junipero o el futurista Frankenstein" href="https://www.youtube.com/watch?v=KfMsP7kHJt4" class="link-registro">Ver video</a>
                 </div>
-            </section>            
-            <section>
-                <h2>Contacto</h2>
-            </section>
-        </main>
-    </div>
+            </div>
+
+            <div class="tarjeta">
+                <img src="" alt="Ensayo academico"/>
+                <div class="info-proyecto">
+                    <h3>Un mundo de sensaciones ¿Quienes son los Monstruos Orcos y Elfos,</h3>
+                    <p>Ensayo bla bla</p>
+                    <a title="Junipero o el futurista Frankenstein" href="" class="link-registro">Leer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+        <div class="contacto-form">
+            <h2>Contacto</h2>
+            <form action="#" method="post">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="contacto-redes">
+            <h3>Mis redes</h3>
+            <div class="redes-icons">
+                <a href="https://www.instagram.com/tu_instagram" target="_blank">
+                <img src="img/instagram.png" alt="Instagram">
+                </a>
+
+                <a href="https://wa.me/54911XXXXXXXX" target="_blank">
+                <img src="img/whatsapp.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+    </section>
     <footer>
-        <p>&copy; 2025 Milagros Dimasi. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Milagros Dimasi.</p>
     </footer>
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <script src="script.js"></script>
 </body>
 </html>
