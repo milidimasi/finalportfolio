@@ -2,103 +2,363 @@
 
     scroll-behavior: smooth;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
 body {
-    background-color: #000;
-    color: #fff;
-    font-family: notor-sans, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background: black;
 }
 
-.container {
-    max-width: calc(100% - 40px);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-header h1{
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
-    margin-top: 3.50rem; 
-    margin-bottom: 6.75rem; 
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    backdrop-filter: blur(8px);
 }
 
-header p {
-    font-size: 1 rem; 
-    font-weight: italic;
+header h1 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff69b4;
+}
+
+section {
+    height: 100vh;
     display: flex;
     justify-content: center;
-    margin-top: 10rem;
-    margin-bottom: 15rem; 
+    align-items: center;
+    position: relative;
 }
 
-nav ul { 
+#inicio {
+    position: relative;
+    overflow: hidden;
+}
+
+#inicio h2 {
+    position: relative;
+    z-index: 5;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1.3;
+}
+
+#inicio canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#sobre-mi {
+    background-color: #0e0e15;
+    padding: 3rem;
+    text-align: center;
+}
+
+/* ===== SECCIÓN PROYECTOS ===== */
+.trabajos {
+    height: 100vh;               /* Ocupa toda la pantalla */
+    display: flex;               /* Flex para centrar el contenedor interno */
+    justify-content: center;     /* Centra horizontalmente */
+    align-items: center;         /* Centra verticalmente */
+    position: relative;          /* Para posicionar elementos absolutos si los necesitás */
+    padding: 40px;
+}
+
+/* Contenedor interno para manejar el grid */
+.trabajos .contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Tres tarjetas lado a lado */
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* ===== TARJETAS ===== */
+.tarjeta {
     display: flex;
-    justify-content: center;
-    gap: 3.5625rem;
-    margin: 50px 0;
-    padding: 15px;
-    margin-bottom: 5rem;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.mifoto {
-    width: 200px;
+    flex-direction: column;
+    background-color: #f8f8f8;
     border-radius: 10px;
-    display: flex;
-    justify-content: flex-end;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
+/* Imagen: 1/4 del ancho */
+.tarjeta img {
+    width: 100%;             /* Ocupa todo el ancho */
+    height: 150px;           /* Podés cambiarlo */
+    object-fit: cover;
+}
+
+/* Contenido: 3/4 del ancho */
+.contenido {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contenido h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.contenido p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.link-registro {
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-registro:hover {
+    text-decoration: underline;
+}
+
+/* ===== SECCIÓN CONTACTO ===== */
+.contacto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 10%;
+    gap: 50px;
+}
+
+/* ==== Cajita del formulario ==== */
+.contacto-form {
+    flex: 1;
+    background-color: #f7f7f7;   /* Fondo */
+    padding: 30px;
+    border-radius: 12px;         /* Bordes redondeados */
+    border: 1px solid #dcdcdc;   /* Borde */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra */
+}
+
+.contacto-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contacto-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto-form label {
+    font-size: 1rem;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.contacto-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contacto-form button {
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.contacto-form button:hover {
+    background-color: #333;
+}
+
+/* ==== Redes a la derecha ==== */
+.contacto-redes {
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.contacto-redes h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Iconos en fila */
+.redes-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.redes-icons img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.redes-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* ===== SECCIÓN SOBRE MÍ ===== */
 .sobre-mi {
     display: flex;
-    align-items: center;
-    gap: 50px; 
-    margin-bottom: 8rem;
-    margin-top: 5rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    align-items: center;          /* Centra verticalmente */
+    justify-content: center;      /* Centra horizontalmente */
+    gap: 50px;
+    padding: 60px 10%;
 }
 
-.sobre-mi p {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.card {
-    max-width:300px; 
-    position: relative;
-    overflow: clip;
-}
-
-.card__image {
-    width: 100%;
-    aspect-ratio: 1;
+/* Imagen */
+.sobre-mi img {
+    width: 300px; 
+    height: auto;
+    border-radius: 12px;
     object-fit: cover;
-    transition: transform 0.4s ease-in-out;
 }
 
-.card__content {
-    position: absolute;
-    backdrop-filter: blur(5px);
-    top: 0;
-    bottom: 0;
-    padding: 1rem;
-
-    color: #fff;
-
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+/* Texto biográfico */
+.sobre-mi .bio {
+    max-width: 500px;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-.card:hover .card__content {
-    opacity: 1;
-    transform: scale(1);
+/* Título opcional dentro de la sección */
+.sobre-mi h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
 }
 
-.card:hover .card__image {
-    transform: scale(1.25);
+/* ===== Responsive para celular ===== */
+@media (max-width: 768px) {
+    .sobre-mi {
+        flex-direction: column;      /* Imagen arriba, texto abajo */
+        text-align: center;
+    }
+
+    .sobre-mi img {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .sobre-mi .bio {
+        max-width: 90%;
+    }
+}
+
+footer {
+    width: 100%;                     /* Ocupa todo el ancho */
+    padding: 20px 0;
+
+    background-color: #f5f5f5;       /* Fondo suave */
+    border-top: 1px solid #dcdcdc;   /* Borde arriba */
+    
+    text-align: center;              /* Centrar texto */
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Para asegurarnos de que el footer quede abajo incluso si hay poco contenido */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* El contenido empuja al footer hacia abajo */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    footer {
+        width: 85%;      /* Más ancho en celular */
+        padding: 20px;
+    }
+}
+
+/* ===== Responsive para celular ===== */
+@media (max-width: 768px) {
+    .contacto {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .redes-icons {
+        justify-content: center;
+    }
+
+    .redes-icons img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+    .trabajos {
+        height: auto; /* Evita problemas en pantallas chicas */
+        padding: 20px;
+    }
+
+    .trabajos .contenedor-tarjetas {
+        grid-template-columns: 1fr; /* Tarjetas una debajo de la otra */
+    }
+    .tarjeta {
+        flex-direction: column;
+    }
+
+    .tarjeta img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .contenido {
+        width: 100%;
+    }
 }
