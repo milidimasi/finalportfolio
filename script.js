@@ -30,3 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ejecutar visual
     visuales[randomIndex]();
 });
+
+const nav = document.querySelector('#nav');
+const abrir = document.querySelector('#abrir');
+const cerrar = document.querySelector('#cerrar');
+
+abrir.addEventListener('click', () => {
+    nav.classList.add('visible'); 
+}) 
+
+cerrar.addEventListener('click', () => {
+    nav.classList.remove('visible'); 
+}) 

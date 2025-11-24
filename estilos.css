@@ -32,9 +32,20 @@ header {
 header h1 {
     font-size: 1rem;
     letter-spacing: 1px;
+    color: #c30463;
 }
 
-nav a {
+.nav.visible{
+    backdrop-filter: blur(8px);
+}
+
+.lista-nav {
+    list-style-type: none;
+    display: flex;
+    gap:20px;
+}
+
+.lista-nav li a {
     color: white;
     text-decoration: none;
     margin-left: 1.5rem;
@@ -43,6 +54,11 @@ nav a {
 
 nav a:hover {
     color: #c30463;
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none; 
 }
 
 section {
@@ -79,9 +95,6 @@ section {
 #sobre-mi {
     padding: 3rem;
     text-align: center;
-}
-
-.sobre-mi {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +103,8 @@ section {
     background-color: #000000;
 }
 
-.sobre-mi img {
+
+#sobre-mi img {
     width: 300px;          
     height: auto;
     border-radius: 10px;
@@ -98,21 +112,21 @@ section {
     flex-shrink: 1;
 }
 
-.sobre-mi .bio {
+#sobre-mi .bio {
     max-width: 500px;
     font-size: 1.2rem;
     line-height: 1.6;
     flex: 1;
 }
 
-.sobre-mi h2 {
+#sobre-mi h2 {
     display: flex;
     margin-bottom: 15px;
     font-size: 2rem;
     justify-content: center;
 }
 
-.sobre-mi p {
+#sobre-mi p {
     display: flex;
     margin-bottom: 15px;
     font-size: 1rem;
@@ -128,6 +142,11 @@ section {
     position: relative;
     padding: 40px;
     background-color: #12071f;
+}
+
+#proyectos h2 {
+    top: 0;
+    font-size: 50px;
 }
 
 /* Contenedor interno para manejar el grid */
@@ -255,29 +274,77 @@ section {
     display: flex;
     gap: 20px;
     justify-content: center;
-}
-
-.redes-icons img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
     transition: transform 0.3s ease;
-}
-
-.redes-icons img:hover {
-    transform: scale(1.1);
 }
 
 /* ===== FOOTER ===== */
 
 footer {
-    width: auto;                 
+    width: 100%;                 
     padding: 3px;
     background-color: #094914;       
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1); 
     text-align: center;              
     font-size: 1rem;
     color: #767575;
+}
+
+
+/* Menu hamburguesa */
+@media screen and (max-width: 550px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25 rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+
+    .abrir-menu {
+        color: white;
+    }
+
+    .cerrar-menu{
+        color: white;
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        right: 0;
+        background: rgb(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        z-index: 10;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.3);
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .nav.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .lista-nav{
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .lista-nav li{
+        color: white;
+    }
 }
 
 /* ===== RESPONSIVE: SEGUIR EN 2 COLUMNAS ===== */
@@ -301,9 +368,9 @@ footer {
         gap: 15px;
     }
 
-    .redes-icons img {
-        width: 50px;
-        height: 50px;
+    .redes-icons {
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -366,15 +433,6 @@ footer {
     .sobre-mi .bio {
         max-width: 60%;          /* texto más dominante */
         font-size: 1rem;
-    }
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-    footer {
-        width: 85%;      /* Más ancho en celular */
-        padding: 20px;
     }
 }
 
